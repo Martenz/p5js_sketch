@@ -8,8 +8,8 @@ https://github.com/CodingRainbow/Rainbow-Code
 
 <u>Test direct links:</u>
 
-<a href="https://martenz.github.io/p5js_sketch/flappy_bird/" target="_blank">Flappy Bird</a>
-<a href="https://martenz.github.io/p5js_sketch/leaflet_spatialite/" target="_blank">Leaflet Spatialite Test</a>
+<p><a href="https://martenz.github.io/p5js_sketch/flappy_bird/" target="_blank">Flappy Bird</a></p>
+<p><a href="https://martenz.github.io/p5js_sketch/leaflet_spatialite/" target="_blank">Leaflet Spatialite Test</a></p>
 
 ----------------------------------------------------------------------------------
 Added:
