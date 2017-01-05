@@ -4,7 +4,7 @@ function Asteroid(){
  this.total = floor(random(5,15));
  this.offset = [];
  for (var i = 0; i < this.total; i++){
-   this.offset = random(-5,5);
+   this.offset[i] = random(-5,5);
  }
  
  this.render = function() {
