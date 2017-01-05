@@ -33,7 +33,7 @@ function Ship() {
     noFill();
     stroke(255);
     triangle(-this.r,this.r,this.r, this.r,0,-this.r);
-    image(this.img, 0, 0);
+    image(this.img, -this.r/2, 0);
     pop();
   }
   
