@@ -23,10 +23,10 @@ function keyPressed() {
   if (key == ' ') {
     //console.log("SPACE");
   }else
-  if (key == RIGHT_ARROW){
+  if (keyCode == RIGHT_ARROW){
     ship.setRotation(-0.1);
   }else
-  if (key == LEFT_ARROW){
+  if (keyCode == LEFT_ARROW){
     ship.setRotation(0.1);
   }
   
