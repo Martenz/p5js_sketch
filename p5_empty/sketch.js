@@ -20,7 +20,7 @@ function draw() {
   ship.update();
   ship.edges();
   
-  for (var i = 0, i < asteroids.length; i++) {
+  for (var i = 0; i < asteroids.length; i++) {
    asteroids[i].render();
   }
 }
