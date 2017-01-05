@@ -47,7 +47,7 @@ function keyPressed() {
     bird.up();
     //console.log("SPACE");
   }
-function touchstart(){
+function touchStarted(){
  bird.up();
  } 
   
