@@ -14,8 +14,10 @@ function Asteroid(){
    beginShape();
    for (var i = 0; i < this.total; i++ ) {
      var angle = map(i, 0, this.total, 0, TWO_PI);
-     var x = this.r * cos(angle);
-     var y = this.r * sin(angle);
+    
+     var r = this.r + this.offset[i];
+     var x = r * cos(angle);
+     var y = r * sin(angle);
      vertex(x,y);
    }
    endShape(CLOSE);
