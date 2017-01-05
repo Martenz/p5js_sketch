@@ -11,6 +11,7 @@ function setup() {
 
 function draw() {
   background(0);
+  ship.render();
 }
 
 function Ship() {
