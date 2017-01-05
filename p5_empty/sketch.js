@@ -13,6 +13,7 @@ function draw() {
   background(0);
   ship.render();
   ship.turn();
+  ship.update();
 }
 
 function keyReleased(){
@@ -28,6 +29,12 @@ function keyPressed() {
   }else
   if (keyCode == LEFT_ARROW){
     ship.setRotation(-0.1);
+  }else
+  if (keyCode == UP_ARROW){
+    ship.setRotation(-0.1);
+  }else
+  if (keyCode == DOWN_ARROW){
+    ship.setRotation(-0.1);
   }
   
 }
@@ -37,6 +44,11 @@ function Ship() {
   this.r = 20;
   this.heading = 0;
   this.rotation = 0;
+  this.vel = createVector(0,0);
+  
+  this.update = function(){
+     this.pos.add(this.vel);
+  }
   
   this.render = function() {
     translate(this.pos.x,this.pos.y);
