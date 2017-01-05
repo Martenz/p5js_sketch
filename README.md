@@ -7,7 +7,7 @@ https://github.com/CodingRainbow/Rainbow-Code
 
 test direct links:
 
-https://martenz.github.io/p5js_sketch/flappy_bird/
+<a href="https://martenz.github.io/p5js_sketch/flappy_bird/" target='blank'>Flappy Bird</a>
 
 
 Added:
