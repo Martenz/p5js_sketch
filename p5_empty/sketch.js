@@ -24,10 +24,10 @@ function keyPressed() {
     //console.log("SPACE");
   }else
   if (keyCode == RIGHT_ARROW){
-    ship.setRotation(-0.1);
+    ship.setRotation(0.1);
   }else
   if (keyCode == LEFT_ARROW){
-    ship.setRotation(0.1);
+    ship.setRotation(-0.1);
   }
   
 }
