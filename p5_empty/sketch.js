@@ -14,6 +14,23 @@ function draw() {
   ship.render();
 }
 
+function keyReleased(){
+  ship.setRotation(0);
+}
+
+function keyPressed() {
+  if (key == ' ') {
+    //console.log("SPACE");
+  }
+  if (key == RIGHT_ARROW){
+    ship.setRotation(-0.1);
+  }
+  if (key == LEFT_ARROW){
+    ship.setRotation(0.1);
+  }
+  
+}
+
 function Ship() {
   this.pos = createVector(width/2, height/2);
   this.r = 20;
@@ -37,19 +54,4 @@ function Ship() {
   }
 }
 
-function keyReleased(){
-  ship.setRotation(0);
-}
 
-function keyPressed() {
-  if (key == ' ') {
-    //console.log("SPACE");
-  }
-  if (key == RIGHT_ARROW){
-    ship.setRotation(-0.1);
-  }
-  if (key == LEFT_ARROW){
-    ship.setRotation(0.1);
-  }
-  
-}
