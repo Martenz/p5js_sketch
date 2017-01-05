@@ -44,7 +44,7 @@ function Ship() {
   this.r = 20;
   this.heading = 0;
   this.rotation = 0;
-  this.vel = createVector(0,0);
+  this.vel = createVector(1,0);
   
   this.update = function(){
      this.pos.add(this.vel);
