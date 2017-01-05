@@ -1,3 +1,5 @@
 $=jQuery;
 
-$('body').css('margin','0px');
+$( document ).ready(function() {
+  $('body').css('margin','0px');
+});
