@@ -12,6 +12,7 @@ function setup() {
 function draw() {
   background(0);
   ship.render();
+  ship.turn();
 }
 
 function keyReleased(){
