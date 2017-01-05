@@ -6,7 +6,7 @@ function Ship() {
   this.vel = createVector(1,0);
   this.isBoosting = false;
   
-  this.img = loadImage("imgs/parag.png");
+  this.img = loadImage("img/parag.png");
   
   this.boosting = function(b){
    this.isBoosting = b;
