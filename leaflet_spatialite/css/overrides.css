@@ -1,0 +1,31 @@
+body {
+	background: url("../img/mtx.jpg");
+}
+
+.jumbotron{
+	padding:0px;
+}
+
+.panel-default{
+	min-height: 365px;
+}
+
+h1{
+	margin:0px;
+	color:#c6c6c6!important;
+	background-color:#424242;
+}
+
+textarea.form-control{
+	min-height: 250px;
+}
+
+.btn-primary, .btn-success{
+	width: 100%;
+	margin-top: 5px;
+	border-radius:0px;
+}
+
+.form-group{
+	margin:0px;
+}
