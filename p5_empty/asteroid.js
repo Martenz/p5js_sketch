@@ -1,6 +1,6 @@
 function Asteroid(){
  this.pos = createVector(random(width), random(height));
- this.r = random(floor(width/10),floor(width/3)); 
+ this.r = random(floor(width/100),floor(width/20)); 
  this.total = floor(random(5,15));
  
  this.render = function() {
