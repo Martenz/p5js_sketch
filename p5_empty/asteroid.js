@@ -2,6 +2,10 @@ function Asteroid(){
  this.pos = createVector(random(width), random(height));
  this.r = random(floor(width/100),floor(width/20)); 
  this.total = floor(random(5,15));
+ this.offset = [];
+ for (var i = 0; i < this.total; i++){
+   this.offset = random(-5,5);
+ }
  
  this.render = function() {
    push();
