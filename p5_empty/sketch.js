@@ -18,6 +18,7 @@ function draw() {
 
 function keyReleased(){
   ship.setRotation(0);
+  ship.boosting(false);
 }
 
 function keyPressed() {
@@ -31,11 +32,8 @@ function keyPressed() {
     ship.setRotation(-0.1);
   }else
   if (keyCode == UP_ARROW){
-    ship.boost(-0.1);
+    ship.boosting(true);
   }else
-  if (keyCode == DOWN_ARROW){
-    ship.setRotation(-0.1);
-  }
   
 }
 
@@ -45,13 +43,23 @@ function Ship() {
   this.heading = 0;
   this.rotation = 0;
   this.vel = createVector(1,0);
+  this.isBoosting = false;
+  
+  this.boosting = function(b){
+   this.isBoosting = b;
+  }
   
   this.update = function(){
-     this.pos.add(this.vel);
+    if (this.isBoosting) {
+      this.boost();
+    }
+    this.pos.add(this.vel);
+    this.vel.mult(0.95);
   }
   
   this.boost = function() {
     var force = p5.Vector.fromAngle(this.heading);
+    force.mult(0.1);
     this.vel.add(force);
   }
   
