@@ -20,7 +20,6 @@ function Ship() {
   this.r = 10;
   this.render = function() {
     triangle(-this.r,this.r,this.r, this.r,0,-this.r);
-    
   }
 }
 
