@@ -31,7 +31,7 @@ function keyPressed() {
     ship.setRotation(-0.1);
   }else
   if (keyCode == UP_ARROW){
-    ship.setRotation(-0.1);
+    ship.boost(-0.1);
   }else
   if (keyCode == DOWN_ARROW){
     ship.setRotation(-0.1);
@@ -48,6 +48,11 @@ function Ship() {
   
   this.update = function(){
      this.pos.add(this.vel);
+  }
+  
+  this.boost = function {
+    var force = p5.Vector.fromAngle(heading);
+    this.vel.add(force);
   }
   
   this.render = function() {
