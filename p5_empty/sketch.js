@@ -33,7 +33,7 @@ function keyPressed() {
   }else
   if (keyCode == UP_ARROW){
     ship.boosting(true);
-  }else
+  }
   
 }
 
