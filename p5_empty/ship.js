@@ -1,6 +1,6 @@
 function Ship() {
   this.pos = createVector(width/2, height/2);
-  this.r = floor(width/10);
+  this.r = floor(width/50);
   this.heading = 0;
   this.rotation = 0;
   this.vel = createVector(1,0);
