@@ -14,6 +14,7 @@ function draw() {
   ship.render();
   ship.turn();
   ship.update();
+  ship.edges();
 }
 
 function keyReleased(){
