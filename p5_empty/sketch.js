@@ -16,7 +16,7 @@ function draw() {
 
 function Ship() {
   this.pos = createVector(width/2, height/2);
-  this.r = 10;
+  this.r = 20;
   this.render = function() {
     translate(this.pos.x,this.pos.y);
     noFill();
