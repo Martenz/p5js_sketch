@@ -47,7 +47,7 @@ function Paraglide() {
       }
     }
 
-    console.log(this.vel.x);
+    //console.log(this.vel.x);
   }
 
   this.boost = function() {
@@ -65,7 +65,7 @@ function Paraglide() {
   this.raise = function(v){
     var force = p5.Vector.fromAngle(PI/2 + this.heading);
     force.mult(v*0.025);
-    console.log(v);
+    //console.log(v);
     this.vel.add(force);
   }
 
@@ -78,7 +78,8 @@ function Paraglide() {
     //stroke(255);
     //triangle(-this.r,this.r,this.r, this.r,0,-this.r);
     if (!this.landed){
-      image(this.img, this.img.width/2, this.img.height/2, this.img.width*this.imgFact, this.img.height*this.imgFact);
+      //image(this.img, this.img.width/2, this.img.height/2, this.img.width*this.imgFact, this.img.height*this.imgFact);
+      image(this.img, 0, 0, this.img.width*this.imgFact, this.img.height*this.imgFact);
     }else{
       image(this.imgLanded, this.img.width/2, this.img.height/2, this.img.width*this.imgFact, this.img.height*this.imgFact);
     }
@@ -87,7 +88,7 @@ function Paraglide() {
 
   this.edges = function() {
     if (this.pos.x > width + this.r) {
-      this.pos.x = -this.r;
+      this.pos.x = this.r;//-this.r;
     }else if (this.pos.x < -this.r) {
       this.pos.x = width + this.r;
     }

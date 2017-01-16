@@ -4,21 +4,26 @@
 
 var ship;
 var thermals = [];
-var maxthermals = 10;
+var maxthermals = 6;
+var delta_w = 0;
+var bg;
 
-
+console.log(delta_w);
 function setup() {
+  bg = loadImage("img/bg.png");
   createCanvas(windowWidth,windowHeight);
   ship = new Paraglide();
+  delta_w = (width/maxthermals);
   for (var i = 0; i < maxthermals; i++){
-    thermals.push(new Thermal());
+    thermals.push(new Thermal(delta_w*i));
   }
 }
 
 function draw() {
-  background(0);
-  fill('rgba(150, 150, 150, 0.9)');
-  rect(0,height-ship.img.height,width,ship.img.height,0,0,0,0);
+
+  background(bg);
+  //fill('rgba(150, 150, 150, 0.9)');
+  //rect(0,height-ship.img.height,width,ship.img.height,0,0,0,0);
   ship.render();
   if (!ship.landed){
     ship.turn();
@@ -48,10 +53,10 @@ function keyPressed() {
     //console.log("SPACE");
   }else
   if (keyCode == RIGHT_ARROW){
-    //ship.setRotation(0.1);
+    ship.setRotation(0.01);
   }else
   if (keyCode == LEFT_ARROW){
-    //ship.setRotation(-0.1);
+    ship.setRotation(-0.01);
   }else
   if (keyCode == UP_ARROW){
     ship.boosting(true);
