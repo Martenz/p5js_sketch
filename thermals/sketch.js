@@ -4,9 +4,12 @@
 
 var ship;
 var thermals = [];
-var maxthermals = 6;
+var maxthermals = 5;
 var delta_w = 0;
 var bg;
+var terrain = [];
+var trees = [];
+var random_y = 0;
 
 console.log(delta_w);
 function setup() {
@@ -16,12 +19,17 @@ function setup() {
   delta_w = (width/maxthermals);
   for (var i = 0; i < maxthermals; i++){
     thermals.push(new Thermal(delta_w*i));
+    random_y = random(height*0.75,height);
+    trees.push(new Tree(delta_w*i,random_y));
+    terrain.push(new Terrain(delta_w*i,random_y,delta_w));
+
   }
 }
 
 function draw() {
 
   background(bg);
+  //background(0);
   //fill('rgba(150, 150, 150, 0.9)');
   //rect(0,height-ship.img.height,width,ship.img.height,0,0,0,0);
   ship.render();
@@ -39,6 +47,16 @@ function draw() {
      //console.log("HIT");
      ship.thermalRaising(thermals[i].vel.y);
    }
+  }
+
+  for (var i = 0; i < trees.length; i++){
+    terrain[i].render();
+    trees[i].render();
+
+    if (trees[i].hits(ship)){
+      ship.landed = true;
+    }
+
   }
 }
 

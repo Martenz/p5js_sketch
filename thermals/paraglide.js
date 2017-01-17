@@ -93,9 +93,8 @@ function Paraglide() {
       this.pos.x = width + this.r;
     }
     if (this.pos.y > height- this.img.height*this.imgFact*2) {
-      //this.pos.y = -this.r;
-      this.pos.y = height - this.img.height*this.imgFact*2;
-      this.landed = true;
+      //this.pos.y = height - this.img.height*this.imgFact*2;
+      //this.landed = true;
     }else if (this.pos.y < -this.r) {
       this.pos.y = -this.r;
     }
