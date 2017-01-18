@@ -8,12 +8,14 @@ function Terrain (x,y,delta){
 
   this.render = function() {
     push();
-    fill('silver');
+    fill('brown');
     //noFill();
-    stroke('black');
-    strokeWeight(5);
+    //stroke('white');
+    //strokeWeight(5);
+    noStroke();
     translate(this.pos.x, this.pos.y);
-    triangle(-delta/1.5,height-y,0,0,delta/1.5,height-y);
+    //triangle(-delta/1.5,height-y,0,0,delta/1.5,height-y);
+    rect(-delta*1.2/2,0,delta*1.2,(height-y)*2,delta);
     pop();
    }
 

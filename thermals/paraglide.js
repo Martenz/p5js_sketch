@@ -2,11 +2,12 @@ function Paraglide() {
   this.img = loadImage("img/parag.png");
   this.imgLanded = loadImage("img/doh.png");
   this.pos = createVector(width/30, height/20);
-  this.imgFact = 1;
-  this.r = this.img.height*this.imgFact;
+  this.imgFact = 0.1*height;
+  this.imgSize = createVector(this.img.width*this.imgFact,this.img.height*this.imgFact);
+  this.r = this.imgSize.y;
   this.heading = 0;
   this.rotation = 0;
-  this.rateoDown = 0.5;
+  this.rateoDown = 1/9;
   this.maxVel = 2;
   this.vel = createVector(1,0);
   this.isBoosting = false;
@@ -79,24 +80,24 @@ function Paraglide() {
     //triangle(-this.r,this.r,this.r, this.r,0,-this.r);
     if (!this.landed){
       //image(this.img, this.img.width/2, this.img.height/2, this.img.width*this.imgFact, this.img.height*this.imgFact);
-      image(this.img, 0, 0, this.img.width*this.imgFact, this.img.height*this.imgFact);
+      image(this.img, 0, 0, this.imgSize.x, this.imgSize.y);
     }else{
-      image(this.imgLanded, this.img.width/2, this.img.height/2, this.img.width*this.imgFact, this.img.height*this.imgFact);
+      image(this.imgLanded, this.imgSize.x/2, this.imgSize.y/2, this.imgSize.x, this.imgSize.y);
     }
     pop();
   }
 
   this.edges = function() {
-    if (this.pos.x > width + this.r) {
-      this.pos.x = this.r;//-this.r;
+    if (this.pos.x > width) {
+      this.pos.x = 0;//-this.r;
     }else if (this.pos.x < -this.r) {
       this.pos.x = width + this.r;
     }
-    if (this.pos.y > height- this.img.height*this.imgFact*2) {
+    if (this.pos.y > height- this.imgSize.y) {
       //this.pos.y = height - this.img.height*this.imgFact*2;
       //this.landed = true;
-    }else if (this.pos.y < -this.r) {
-      this.pos.y = -this.r;
+    }else if (this.pos.y < 0) {
+      this.pos.y = 0;
     }
   }
 
