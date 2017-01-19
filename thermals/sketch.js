@@ -80,6 +80,16 @@ function keyPressed() {
   if (keyCode == UP_ARROW){
     ship.boosting(true);
   }else
+
+  var rY = rotationY + 180;
+  var pRY = pReotationY + 180;
+  if ((rY - pRY > 2 && rY - pRY < 270)|| rY - pRY < -270){
+    //clockwise
+    ship.boosting(true);
+  }else if (rY - pRY < -2 || rY - pRY > 270){
+    //counter-clockwise
+    ship.braking(true);
+  }
   if (keyCode == DOWN_ARROW){
     ship.braking(true);
   }
