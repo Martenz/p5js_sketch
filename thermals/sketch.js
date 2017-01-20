@@ -5,6 +5,7 @@
 var ship;
 var thermals = [];
 var maxthermals;
+var maxterrain;
 var delta_w = 0;
 var bg;
 var terrain = [];
@@ -17,15 +18,20 @@ function setup() {
   bg = loadImage("img/bg.png");
   createCanvas(windowWidth,windowHeight);
   ship = new Paraglide();
-  maxthermals = random(3,8);
+  maxthermals = random(1,5);
+  maxterrain = random(10,30);
   delta_w = (width/(maxthermals-1));
   wind = random(-0.25,0.25);
-  for (var i = 0; i < maxthermals; i++){
-    thermals.push(new Thermal(delta_w*i,wind));
+  var c_t = 0;
+  for (var i = 0; i < maxterrain; i++){
     random_y = random(height*0.7,height*0.95);
     trees.push(new Tree(delta_w*i,random_y));
     terrain.push(new Terrain(delta_w*i,random_y,delta_w));
-
+    c_r = random(0.01,0.99);
+    if (c_r > 0.75 && c_t <= maxthermals){
+      c_t+=1;
+      thermals.push(new Thermal(delta_w*i,wind));
+    }
   }
 }
 
