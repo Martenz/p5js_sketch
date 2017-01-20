@@ -2,7 +2,7 @@ function Thermal(pos_x,wind){
  //this.pos = createVector(random(0,width), height);
  this.img = loadImage("img/therm_up.png");
  this.pos = createVector(pos_x, height);
- this.r = random(0.01*width,0.2*width);
+ this.r = random(0.01*width,0.1*width);
  this.vel = new p5.Vector(wind,random(-0.25,-2.0));//p5.Vector.random2D();
  this.thermaltop = random(height*0.025,height*0.8);
 
