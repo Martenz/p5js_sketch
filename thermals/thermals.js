@@ -1,15 +1,10 @@
-function Thermal(pos_x){
+function Thermal(pos_x,wind){
  //this.pos = createVector(random(0,width), height);
  this.img = loadImage("img/therm_up.png");
  this.pos = createVector(pos_x, height);
- this.vel = new p5.Vector(random(-0.25,0.25),random(-0.05,-0.5)*5);//p5.Vector.random2D();
- this.maxvel = new p5.Vector(0.1,-0.5*5);
- this.total = 6;//floor(random(5,15));
- this.thermaltop = random(height*0.01,height*0.8);
- this.r = 5*ceil(1/(this.thermaltop/height));
- this.fillcolor = floor(this.vel.mag()/this.maxvel.mag()*255);
-
- //console.log(this.fillcolor);
+ this.r = random(0.1*width;0.2*width);
+ this.vel = new p5.Vector(wind,random(-0.25,-2.0));//p5.Vector.random2D();
+ this.thermaltop = random(height*0.025,height*0.8);
 
  this.hits = function(theship) {
    if (theship.pos.x + theship.img.width > this.pos.x-this.r && theship.pos.x + theship.img.width < this.pos.x+this.r) {
@@ -30,7 +25,6 @@ function Thermal(pos_x){
 
  this.render = function() {
    push();
-   //fill(this.fillcolor,this.fillcolor,255-this.fillcolor);
    noFill();
    stroke('white');
    translate(this.pos.x, this.pos.y);

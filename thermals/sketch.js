@@ -10,6 +10,7 @@ var bg;
 var terrain = [];
 var trees = [];
 var random_y = 0;
+var wind = 1; //1 forward, -1 backward
 
 console.log(delta_w);
 function setup() {
@@ -18,9 +19,10 @@ function setup() {
   ship = new Paraglide();
   maxthermals = random(5,20);
   delta_w = (width/(maxthermals-1));
+  wind = random(-0.25,0.25);
   for (var i = 0; i < maxthermals; i++){
-    thermals.push(new Thermal(delta_w*i));
-    random_y = random(height*0.5,height*0.8);
+    thermals.push(new Thermal(delta_w*i,wind));
+    random_y = random(height*0.7,height*0.95);
     trees.push(new Tree(delta_w*i,random_y));
     terrain.push(new Terrain(delta_w*i,random_y,delta_w));
 
@@ -76,7 +78,7 @@ function deviceTurned() {
   }else if (rY - pRY < -2 || rY - pRY > 270){
     //counter-clockwise
     ship.braking(true);
-  }  
+  }
 }
 
 function keyPressed() {
