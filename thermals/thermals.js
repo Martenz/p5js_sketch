@@ -7,7 +7,7 @@ function Thermal(pos_x,pos_y,wind){
  this.thermaltop = random(height*0.025,height*0.8);
 
  this.hits = function(theship) {
-   if (theship.pos.x + theship.img.width/2 > this.pos.x-this.r && theship.pos.x + theship.img.width/2 < this.pos.x+this.r) {
+   if (theship.pos.x > this.pos.x-this.r && theship.pos.x < this.pos.x+this.r) {
       //if (theship.pos.y + theship.img.height > this.pos.y*0.95 && theship.pos.y + theship.img.height < this.pos.y*1.05 ){
       if (theship.pos.y + theship.img.height > this.thermaltop){
        return true;
