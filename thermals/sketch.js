@@ -82,7 +82,7 @@ function keyPressed() {
   }else
 
   var rY = rotationY + 180;
-  var pRY = pReotationY + 180;
+  var pRY = pRotationY + 180;
   if ((rY - pRY > 2 && rY - pRY < 270)|| rY - pRY < -270){
     //clockwise
     ship.boosting(true);
