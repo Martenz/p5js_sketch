@@ -30,7 +30,7 @@ function setup() {
     c_r = random(0.01,0.99);
     if (c_r > 0.75 && c_t <= maxthermals){
       c_t+=1;
-      thermals.push(new Thermal(delta_w*i,wind));
+      thermals.push(new Thermal(delta_w*i,random_y,wind));
     }
   }
 }
