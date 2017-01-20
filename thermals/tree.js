@@ -12,7 +12,7 @@ function Tree(x,y){
   this.hits = function(theship) {
     if (theship.pos.x  > this.pos.x - this.rx && theship.pos.x < this.pos.x + this.rx) {
        //if (theship.pos.y + theship.img.height > this.pos.y*0.95 && theship.pos.y + theship.img.height < this.pos.y*1.05 ){
-       if (theship.pos.y > this.pos.y){
+       if (theship.pos.y + theship.img.height/2 > this.pos.y){
         return true;
       }else{
         return false;
