@@ -21,7 +21,7 @@ function setup() {
   maxterrain = random(10,30);
   delta_w = (width/(maxterrain-1));
   maxthermals = random(0,floor(0.33*width/delta_w));
-  wind = random(-0.25,0.25);
+  wind = 0;//random(-0.25,0.25);
   var c_t = 0;
   for (var i = 0; i < maxterrain; i++){
     random_y = random(height*0.7,height*0.95);
