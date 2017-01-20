@@ -20,7 +20,7 @@ function setup() {
   ship = new Paraglide();
   maxthermals = random(1,5);
   maxterrain = random(10,30);
-  delta_w = (width/(maxthermals-1));
+  delta_w = (width/(maxterrain-1));
   wind = random(-0.25,0.25);
   var c_t = 0;
   for (var i = 0; i < maxterrain; i++){
