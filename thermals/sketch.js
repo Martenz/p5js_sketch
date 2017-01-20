@@ -18,9 +18,9 @@ function setup() {
   bg = loadImage("img/bg.png");
   createCanvas(windowWidth,windowHeight);
   ship = new Paraglide();
-  maxthermals = random(1,5);
   maxterrain = random(10,30);
   delta_w = (width/(maxterrain-1));
+  maxthermals = random(0,floor(0.33*width/delta_w));
   wind = random(-0.25,0.25);
   var c_t = 0;
   for (var i = 0; i < maxterrain; i++){
