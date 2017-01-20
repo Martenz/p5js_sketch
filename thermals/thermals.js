@@ -36,6 +36,7 @@ function Thermal(pos_x,wind){
   this.edges = function() {
     if (this.pos.y <  this.thermaltop) {
       this.pos.y = height;
+      this.pos.x = pos_x;
     }
   }
 
