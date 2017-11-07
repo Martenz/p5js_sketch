@@ -22,6 +22,7 @@ function draw() {
   ship.turn();
   ship.update();
   ship.edges();
+  $('canvas').css('width','100%');
 }
 
 function keyReleased(){
