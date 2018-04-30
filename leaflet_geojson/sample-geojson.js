@@ -8,6 +8,23 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
   id: 'mapbox.light'
 }).addTo(map);
 
+function popupFeature(feature,layer){
+  layer.bindPopup(
+
+    //..Single properties
+    //feature.properties.name
+
+    //..list all properties
+    function(){
+      var properties="GeoJson Properties<hr></hr>";
+      $.each(feature.properties, function(key, element) {
+         properties += key + ' : ' + element + '<br></br>';
+      });
+      return properties;
+   }
+  );
+};
+
 //GeoJson Static example
 var geojsonFeature = {
     "type": "Feature",
@@ -21,13 +38,17 @@ var geojsonFeature = {
         "coordinates": [-104.99404, 39.75621]
     }
 };
-
-L.geoJSON(geojsonFeature).addTo(map);
+L.geoJSON(geojsonFeature,{
+   onEachFeature: function (feature, layer) {
+    layer.bindPopup(feature.properties.name);
+  }
+}).addTo(map);
 
 // geojson api example
 var geojson_api = "https://www.mapbox.com/help/data/stations.geojson";
-$.getJSON( geojson_api, function( data ) {
-  console.log(data);
-  L.geoJSON(data).addTo(map);
+$.getJSON(geojson_api,function(data){
+  L.geoJson(data, {
+     onEachFeature: popupFeature
+  }).addTo(map);
 
 });
