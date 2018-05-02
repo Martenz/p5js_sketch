@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <!--  Datatables CDN CSS -->
+		<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" crossorigin="anonymous">
+
+		<!-- Tenz Icon Maker CSS -->
+		<link rel="stylesheet" href="./icon_maker.css">
+
+    <title>Tenz Icon Maker</title>
+  </head>
+  <body>
+
+		<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
+		  <div class="btn btn-outline-light"><a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap"><i class="far fa-lightbulb"></i> Tenz</a></div>
+
+		  <div class="navbar-nav-scroll">
+		    <ul class="navbar-nav bd-navbar-nav flex-row">
+		      <li class="nav-item">
+		        <a class="nav-link " href="/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Bootstrap');">Home</a>
+		      </li>
+		      <li class="nav-item">
+		        <a class="nav-link active" href="/docs/4.0/getting-started/introduction/" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Docs');">Documentation</a>
+		      </li>
+		    </ul>
+		  </div>
+
+		  <div class="btn btn-outline-light"><a class="d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="#"><i class="fab fa-github"></i> GitHub</a></div>
+		</header>
+
+		<div class="container-fluid sub-header">
+	  	<!-- Content here -->
+			<h1>Make your Icon!</h1>
+			<hr></hr>
+   	</div>
+
+		<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-4">
+      <h4>Available images</h4>
+			<hr></hr>
+			<table id="available-images" class="display table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+							<th>Image</th>
+							<th>Tag</th>
+            </tr>
+				</thead>
+	      <tbody>
+	          <tr>
+							<td>...</td>
+							<td>A</td>
+						</tr>
+						<tr>
+							<td>...</td>
+							<td>B</td>
+						</tr>
+				</tbody>
+			</table>
+
+			<hr></hr>
+
+			<div class="input-group mb-3">
+			  <input type="text" class="form-control" placeholder="Tag for this image..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+			  <div class="input-group-append">
+			    <span class="input-group-text" id="basic-addon2">Upload</span>
+			  </div>
+			</div>
+
+			<hr></hr>
+
+      <h4>FontAwsome Library</h4>
+
+    </div>
+    <div class="col-lg-5">
+
+				<div class="card text-center">
+				  <div class="card-header">
+				    Your Icon!
+				  </div>
+				  <div class="card-body">
+
+						<div class="container">
+						  <div class="row">
+						    <div class="col-sm">
+									<div class="icon-container">
+									<div id="icon-preview">
+										<i class="fab fa-5x fa-github"></i>
+									</div>
+								</div>
+						    </div>
+						  </div>
+						</div>
+
+						<hr></hr>
+						<p><i class="fas fa-arrow-circle-left"></i> Select (or upload an image on the left) then customize the style with the option on the right <i class="fas fa-arrow-circle-right"></i></p>
+						<hr></hr>
+
+				    <h5 class="card-title"><i class="fas fa-download"></i> Download <i class="fas fa-download"></i></h5>
+				    <p class="card-text">export the icon in different formats:</p>
+				    <a href="#" class="btn btn-primary">PNG</a> <a href="#" class="btn btn-primary">SVG</a>
+						<br></br>
+						<div class="input-group mb-3">
+						  <textarea class="form-control" aria-label="With textarea" disabled></textarea>
+						  <div class="input-group-append">
+						    <span class="input-group-text" id="basic-addon2"><i class="fas fa-file-code"></i> copy</span>
+						  </div>
+						</div>
+				  </div>
+				  <div class="card-footer text-muted">
+				    powered by Duccio
+				  </div>
+				</div>
+
+    </div>
+    <div class="col-lg-3">
+			<h4>Styles</h4>
+			<hr></hr>
+
+				<div class="accordion" id="accordion">
+				  <div class="card">
+				    <div class="card-header" id="headingOne">
+				      <h5 class="mb-0">
+				        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<i class="far fa-square"></i> Borders
+				        </button>
+				      </h5>
+				    </div>
+
+				    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+				      <div class="card-body">
+				        Borders styles ...
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingTwo">
+				      <h5 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+				          <i class="fas fa-paint-brush"></i> Color Schema
+				        </button>
+				      </h5>
+				    </div>
+				    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+				      <div class="card-body">
+								Colors schema ...
+				      </div>
+				    </div>
+				  </div>
+				  <div class="card">
+				    <div class="card-header" id="headingThree">
+				      <h5 class="mb-0">
+				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+				          <i class="fas fa-filter"></i> Effects
+				        </button>
+				      </h5>
+				    </div>
+				    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+				      <div class="card-body">
+								Icon effects ... shadow ...
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+    </div>
+  </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+		<script src="./icon_maker.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>
