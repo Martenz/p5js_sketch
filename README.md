@@ -15,6 +15,7 @@ and test some Leaflet examples
 <p><a href="https://martenz.github.io/p5js_sketch/flappy_bird/" target="_blank">Flappy Bird</a></p>
 <p><a href="https://martenz.github.io/p5js_sketch/leaflet_spatialite/" target="_blank">Leaflet Spatialite Test</a></p>
 <p><a href="https://martenz.github.io/p5js_sketch/leaflet_geojson/" target="_blank">Leaflet geoJson Test</a></p>
+<p><a href="https://martenz.github.io/p5js_sketch/icon_maker/" target="_blank">Icon Maker</a></p>
 
 ----------------------------------------------------------------------------------
 Added:
