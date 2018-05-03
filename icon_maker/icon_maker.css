@@ -27,7 +27,7 @@
 }
 
 .icon-container{
-  max-height:300px;
+  max-height:600px;
   width:fit-content;
   margin-left:auto;
   margin-right:auto;
@@ -35,12 +35,26 @@
 }
 
 /*Default Icon Preview Style Example*/
-#icon-preview{
+#icon-canvas{
+  padding:10px;
+  border: 1px dashed silver;
+  margin-bottom: 10px;
+}
+
+#your-tenz-icon{
+    width:200px;
+    height:200px;
     border: 3px solid #563d7c;
     padding: 3px;
     border-radius: 5px;
     box-shadow: 0px 0px 2px 2px #0000001f;
     color: #563d7c;
+    text-align: center;
+    align-items: center;
+}
+
+#loaded-image{
+  max-height:500px;
 }
 
 img.zoom{
@@ -64,6 +78,9 @@ img.zoom3x{
   color:silver;
 }
 
+#fontawsome-list td{
+  text-align: center;
+}
 /*table.dataTable thead th, table.dataTable thead td {
   border-bottom: 1px dashed silver;
 }
@@ -71,6 +88,7 @@ img.zoom3x{
 table.dataTable.no-footer {
     border-bottom: 1px dashed silver;
 }*/
+
 
 // Extra small devices (portrait phones, less than 576px)
 // No media query since this is the default in Bootstrap

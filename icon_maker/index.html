@@ -8,7 +8,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" crossorigin="anonymous">
 
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
 
     <!--  Datatables CDN CSS -->
 		<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" crossorigin="anonymous"> -->
@@ -22,7 +23,7 @@
   <body>
 
 		<header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-		  <div class="btn btn-outline-light"><a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap"><i class="far fa-lightbulb"></i> Tenz</a></div>
+		  <div class="btn btn-outline-light"><a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Bootstrap"><i class="fa fa-lightbulb"></i> Tenz</a></div>
 
 		  <div class="navbar-nav-scroll">
 		    <ul class="navbar-nav bd-navbar-nav flex-row">
@@ -47,39 +48,55 @@
 		<div class="container-fluid">
   <div class="row">
     <div class="col-lg-4">
-      <h4>Available images</h4>
-			<hr></hr>
-			<table id="available-images" class="display table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-							<th>Image</th>
-							<th>Tag</th>
-            </tr>
-				</thead>
-	      <tbody>
-	          <tr>
-							<td>...</td>
-							<td>A</td>
-						</tr>
-						<tr>
-							<td>...</td>
-							<td>B</td>
-						</tr>
-				</tbody>
-			</table>
 
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			  Available images
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalLabel">Available images</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+			      </div>
+			      <div class="modal-body">
+							<table id="available-images" class="display table table-striped table-bordered" style="width:100%">
+				        <thead>
+				            <tr>
+											<th>Image</th>
+											<th>Tag</th>
+				            </tr>
+								</thead>
+					      <tbody>
+
+								</tbody>
+							</table>
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 			<hr></hr>
 
 			<div class="input-group mb-3">
-			  <input type="text" class="form-control" placeholder="Tag for this image..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+				<input type="file" id="imgInput" class="form-control" placeholder="Tag for this image..." aria-label="Recipient's username" aria-describedby="basic-addon2">
 			  <div class="input-group-append">
-			    <span class="input-group-text" id="basic-addon2">Upload</span>
+			    <span class="input-group-text" id="basic-addon2"><code> png</code> - <code>jpeg/jpg</code> - <code>svg</code></span>
 			  </div>
 			</div>
 
 			<hr></hr>
 
-      <h4>FontAwsome Library</h4>
+      <h4>FontAwsome Library (5.0.11)</h4>
+
+			<div id="includedFontAwsome"></div>
 
     </div>
     <div class="col-lg-5">
@@ -94,28 +111,46 @@
 						  <div class="row">
 						    <div class="col-sm">
 									<div class="icon-container">
-									<div id="icon-preview">
-										<i class="fab fa-5x fa-github"></i>
+									<div id="icon-canvas">
+										<div id="your-tenz-icon">
+											<i class="fab fa-github"></i>
+										</div>
 									</div>
 								</div>
 						    </div>
 						  </div>
 						</div>
 
+						<div class="row">
+							width <div class="col">
+								 <input id="icon-width" value="200" type="number" class="form-control" min="10" max="500">
+							</div>
+							height<div class="col">
+								<input id="icon-height" value="200" type="number" class="form-control" min="10" max="500">
+							</div>
+							<div class="col">
+								<button class="btn btn-default" id="fit content">Fit Content</button>
+							</div>
+						</div>
+
 						<hr></hr>
-						<p><i class="fas fa-arrow-circle-left"></i> Select (or upload an image on the left) then customize the style with the option on the right <i class="fas fa-arrow-circle-right"></i></p>
+						<p><i class="fa fa-arrow-circle-left"></i> Select (or upload an image on the left) then customize the style with the option on the right <i class="fa fa-arrow-circle-right"></i></p>
 						<hr></hr>
 
-				    <h5 class="card-title"><i class="fas fa-download"></i> Download <i class="fas fa-download"></i></h5>
+				    <h5 class="card-title"><i class="fa fa-download"></i> Download <i class="fa fa-download"></i></h5>
 				    <p class="card-text">export the icon in different formats:</p>
-				    <a href="#" class="btn btn-primary">PNG</a> <a href="#" class="btn btn-primary">SVG</a>
+						<a id="save-canvas-2png" href="#" class="btn btn-primary">PNG</a> <a href="#" class="btn btn-primary">SVG</a>
+
 						<br></br>
 						<div class="input-group mb-3">
-						  <textarea class="form-control" aria-label="With textarea" disabled></textarea>
+						  <textarea id="export-icon-code" class="form-control" aria-label="With textarea" disabled></textarea>
 						  <div class="input-group-append">
-						    <span class="input-group-text" id="basic-addon2"><i class="fas fa-file-code"></i> copy</span>
+								<button id="button-copy-to-clipboard" type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Copy to Clipboard" onclick="copy2clipboard();">
+								  <i class="fa fa-file-code"></i> Copy
+								</button>
 						  </div>
 						</div>
+						<div id="exported"></div>
 				  </div>
 				  <div class="card-footer text-muted">
 				    powered by Duccio
@@ -132,7 +167,7 @@
 				    <div class="card-header" id="headingOne">
 				      <h5 class="mb-0">
 				        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-									<i class="far fa-square"></i> Borders
+									<i class="fa fa-square"></i> Borders
 				        </button>
 				      </h5>
 				    </div>
@@ -147,7 +182,7 @@
 				    <div class="card-header" id="headingTwo">
 				      <h5 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-				          <i class="fas fa-paint-brush"></i> Color Schema
+				          <i class="fa fa-paint-brush"></i> Color Schema
 				        </button>
 				      </h5>
 				    </div>
@@ -161,7 +196,7 @@
 				    <div class="card-header" id="headingThree">
 				      <h5 class="mb-0">
 				        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-				          <i class="fas fa-filter"></i> Effects
+				          <i class="fa fa-filter"></i> Effects
 				        </button>
 				      </h5>
 				    </div>
@@ -180,11 +215,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
+		<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+		<script  src="https://code.jquery.com/jquery-3.3.1.min.js"  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 		<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/canvas2image@1.0.5/canvas2image.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Base64/1.0.1/base64.min.js" crossorigin="anonymous"></script>
+
 		<script src="./icon_maker.js" crossorigin="anonymous"></script>
 
   </body>
